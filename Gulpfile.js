@@ -10,7 +10,7 @@ var config = {
     js: './src/js/**/*.js',
     sass: './src/css/**/*.scss',
     html: './src/partials/**/*.html'
-    images: './src/images/'
+    images: './src/images/**.*'
   }
 };
 
