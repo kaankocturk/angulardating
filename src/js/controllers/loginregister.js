@@ -1,5 +1,5 @@
 
-app.controller('loginregister', function($scope, $state, $http, $localStorage) {
+app.controller('loginregister', function($scope, $state, $http, $sessionStorage) {
   $scope.register = function(user){
 
 
@@ -23,7 +23,7 @@ app.controller('loginregister', function($scope, $state, $http, $localStorage) {
     });
   }
   $scope.login = function(user){
-    $scope.$storage = $localStorage;
+    $scope.$storage = $sessionStorage;
     $scope.$storage.email = user.email;
   //
   // $auth.login(user)

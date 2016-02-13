@@ -14,7 +14,7 @@ router.post('/update', function(req, res) {
 
 router.get('/current:email', function(req, res) {
   console.log(req.body);
-  User.findOne({email: req.params.email}, function(err,user){
+  User.findOne({email: req.params.email}).populate('winks').exec(function(err,user){
     console.log(user);
     res.send(user);
   });
@@ -28,6 +28,20 @@ router.put('/', function(req, res) {
       return  user.email===req.body.email ? false : true;
     });
     res.send(users);
+  });
+});
+
+router.put('/wink', function(req, res) {
+  console.log('winks',req.body);
+  User.findOne({_id: req.body.id}, function(err, user){
+    User.findOne({email: req.body.email}, function(err,user2){
+      user.winks.push(user2._id);
+      user.save(function(err, saveditem) {
+        console.log('errsavinguser:', err);
+        console.log('saveduser:', saveditem);
+      });
+    });
+    res.send(user);
   });
 });
 

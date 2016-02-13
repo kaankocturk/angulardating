@@ -18,7 +18,8 @@ var userSchema = Schema({
   pp: String,
   interested: String,
   alcohol: String,
-  smoker: Boolean
+  smoker: Boolean,
+  winks: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 });
 
 userSchema.methods.token = function() {

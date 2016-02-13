@@ -1,6 +1,6 @@
-app.controller('create', function($scope, $localStorage, $http, $state) {
+app.controller('create', function($scope, $sessionStorage, $http, $state) {
   $scope.update = function(user){
-    $http({method: 'POST', url: '/users/update', data: {email:$localStorage.email, data: user}}).then(function success(data){
+    $http({method: 'POST', url: '/users/update', data: {email:$sessionStorage.email, data: user}}).then(function success(data){
       $state.go('profile');
     },
     function err(err){
