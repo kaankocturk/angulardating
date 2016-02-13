@@ -21,6 +21,8 @@ app.controller('users', function($scope, $http, $sessionStorage) {
   }
 
   $scope.wink = function(id){
+    console.log(id);
+    console.log($sessionStorage.email);
     $http({method: 'PUT', url: '/users/wink', data: {email:$sessionStorage.email, id:id}}).then(function success(data){
       console.log(data);
     },
