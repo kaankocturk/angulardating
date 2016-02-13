@@ -20,4 +20,15 @@ router.get('/current:email', function(req, res) {
   });
 });
 
+router.put('/', function(req, res) {
+  console.log(req.body);
+  User.find(req.body.filter, function(err,users){
+    console.log(users);
+    users = users.filter(function(user){
+      return  user.email===req.body.email ? false : true;
+    });
+    res.send(users);
+  });
+});
+
 module.exports = router;
