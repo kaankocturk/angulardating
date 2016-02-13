@@ -9,7 +9,7 @@ var config = {
   paths: {
     js: './src/js/**/*.js',
     sass: './src/css/**/*.scss',
-    html: './src/partials/**/*.html'
+    html: './src/partials/**/*.html',
     images: './src/images/**.*'
   }
 };
