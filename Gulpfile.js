@@ -10,6 +10,7 @@ var config = {
     js: './src/js/**/*.js',
     sass: './src/css/**/*.scss',
     html: './src/partials/**/*.html'
+    images: './src/images/'
   }
 };
 
@@ -48,11 +49,16 @@ gulp.task('html', ['clean-html'], function() {
     .pipe(gulp.dest('./public/partials'));
 });
 
+gulp.task('images', function() {
+  return gulp.src(config.paths.images)
+    .pipe(gulp.dest('./public/images'));
+});
+
 gulp.task('watch', function() {
   gulp.watch(config.paths.sass, ['css']);
   gulp.watch(config.paths.js, ['js']);
   gulp.watch(config.paths.html, ['html']);
 });
 
-gulp.task('build', ['js', 'css', 'html']);
+gulp.task('build', ['js', 'css', 'html','images']);
 gulp.task('default', ['build', 'watch']);
