@@ -1,0 +1,40 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <h1>Tell us about yourself</h1>
+  <form role="form">
+    <div class="form-group">
+      <label for="pwd">Name:</label>
+      <input type="text" class="form-control" ng-model='user.name'>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Age:</label>
+      <input type="number" class="form-control" ng-model='user.age'>
+    </div>
+    <div class="form-group">
+      <label for="likes">Likes:</label>
+      <input type="textarea" class="form-control" ng-model='user.likes'>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Dislikes:</label>
+      <input type="textarea" class="form-control" ng-model='user.dislikes'>
+    </div>
+    <div class="form-group">
+      <label for="pwd">A profile picture link please:</label>
+      <input type="text" class="form-control" ng-model='user.pp'>
+    </div>
+    <p>Gender:</p>
+    <label class="radio-inline"><input type="radio" name='gender' value="male" ng-model='user.gender'>Male</label>
+    <label class="radio-inline"><input type="radio" name="gender" value="female" ng-model='user.gender'>Female</label>
+    <p>Interested in:</p>
+    <label class="radio-inline"><input type="radio" name="optradio" ng-model='user.interested' value='men'>Men</label>
+    <label class="radio-inline"><input type="radio" name="optradio" ng-model='user.interested' value='women'>Women</label>
+    <label class="radio-inline"><input type="radio" name="optradio" ng-model='user.interested' value='both'>Both</label>
+    <p>Alcohol use:</p>
+    <label class="radio-inline"><input type="radio" name="alc" ng-model='user.alcohol' value='none'>None</label>
+    <label class="radio-inline"><input type="radio" name="alc" ng-model='user.alcohol' value='social'>Social</label>
+    <label class="radio-inline"><input type="radio" name="alc" ng-model='user.alcohol' value='heavy'>Heavy</label>
+    <p>Smoker:</p>
+    <label class="radio-inline"><input type="radio" name="smoke" ng-model='user.smoker' value='true'>Yes</label>
+    <label class="radio-inline"><input type="radio" name="smoke" ng-model='user.smoker' value='false'>No</label>
+    <button type="submit" class="btn btn-default" ng-click='update(user)'>Submit</button>
+  </form>
+</div>

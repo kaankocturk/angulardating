@@ -3,9 +3,8 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET frontend app. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Angular' });
+router.get('/', function(req, res) {
+  res.render('index', {title: 'Auth'});
 });
 
 module.exports = router;
