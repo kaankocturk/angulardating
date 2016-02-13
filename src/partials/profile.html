@@ -1,0 +1,9 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <img src="{{pp}}" width='400px'>
+  <h1>Profile</h1>
+  <button ui-sref='createProfile' class='btn btn-primary'>Update profile</button>
+  <ul>
+    <li ng-repeat='(key,value) in user'>{{key}}: {{value}}</li>
+  </ul>
+  <button ui-sref='users' class='btn btn-success'>Find your match!</button>
+</div>

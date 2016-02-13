@@ -24,7 +24,7 @@ app.controller('loginregister', function($scope, $state, $http, $localStorage) {
   }
   $scope.login = function(user){
     $scope.$storage = $localStorage;
-    $scope.$storage.user = user;
+    $scope.$storage.email = user.email;
   //
   // $auth.login(user)
   //   .then(function(response) {
